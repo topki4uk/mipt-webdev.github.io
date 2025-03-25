@@ -303,6 +303,10 @@ footer {
         font-size: 200%;
     }
 
+    #recent-posts {
+        min-width: 375px;
+    }
+
     #text-wrap {
         max-width: 80%;
         text-align: center;
