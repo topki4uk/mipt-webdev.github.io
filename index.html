@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="My main info page">
     <meta name="keywords" content="Main, page, web, study, MIPT, site, people, me">
-    <meta http-equiv="refresh" content="60">
+    <meta http-equiv="refresh" content="300">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
     <header>
         <nav class="nav-bar">
             <ul class="nav-bar-list">
-                <li><a href="contact.html"><b>Contact</b></a></li>
+                <li><a href="#media"><b>Contact</b></a></li>
             </ul>
         </nav>
     </header>
@@ -42,26 +42,26 @@
             <h3>Contact me:</h3>
             <form class="contact-form" action="#">
                 <div class="your-data">
-                <label for="name">Name: </label>
-                <input id="name" type="text" required>
+                <label for="name">Name (only latin letters): </label>
+                <input id="name" type="text" placeholder="Ivan" pattern="[A-Za-z]*" required>
                 
-                <label for="sername">Sername: </label>
-                <input id="sername" type="text" required>
+                <label for="sername">Surname (only latin letters): </label>
+                <input id="sername" type="text" placeholder="Ivanov" pattern="[A-Za-z]*" required>
 
                 <label for="mail">E-mail: </label>
-                <input id="mail" type="email" required>  
+                <input id="mail" type="email" placeholder="example@mail.com" required>  
                 </div>
                 
                 <div class="your-input">
                 <label for="area">Write your question:</label>
-                <textarea id="area" rows="5" cols="33" required></textarea>
+                <textarea id="area" minlength="10" placeholder="Your message..." rows="5" cols="33" required></textarea>
 
                 <input id="send-button" class="button-decrease" type="submit" value="SEND">
                 </div>
             </form>
         </section>
     </main>
-    <footer>
+    <footer id="media">
         <div class="media-wrapper">
             <h3>My media:</h3>
         </div>
