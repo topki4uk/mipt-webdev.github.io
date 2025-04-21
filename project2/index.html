@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="My second project">
+    <meta name="keywords" content="Main, page, web, study, MIPT, site, people, me">
+    <meta http-equiv="refresh" content="300">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/faverico.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <title>Second Frontend Project</title>
+</head>
+<body>
+    <canvas id="background"></canvas>
+    <section id="temp-popup" class="show show-out">
+        <div class="back">
+            <button type="button" id="close-temp" class="btn-close" aria-label="Close"></button>
+        </div>
+        <h1>Welcome to my second front-end project!</h1>
+    </section>
+    <section id="popup" class="show show-out">
+        <div class="back">
+            <button type="button" id="back-button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <section class="popup-view">
+            <svg id="prev" class="image-button" xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+            </svg>
+           <img src="" id="popup-image" alt="">
+           <svg id="next" class="image-button" xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+          </svg>
+        </section>
+    </section>
+    <section id="contact-form-popup" class="show show-out">
+        <div class="back">
+            <button type="button" id="close-form-button" class="btn-close" aria-label="Close"></button>
+        </div>
+        <section id="contact-me">
+            <h2>How to contact me?</h2>
+            <h3 id="nameErrorMessage" class="show show-out">Error</h3>
+            <h3 id="surnameErrorMessage" class="show show-out">Error</h3>
+            <h3 id="emailErrorMessage" class="show show-out">Error</h3>
+            <h3 id="usermessageErrorMessage" class="show show-out">Error</h3>
+            <form id="contact-form" method="post" action="/index.html">
+                <div class="info">
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" placeholder="Ivan">
+
+                    <label for="surname">Surname:</label>
+                    <input id="surname" type="text" placeholder="Ivanov">
+
+                    <label for="email">E-mail:</label>
+                    <input id="email" type="email" placeholder="example@mail.com">
+                </div>
+                <div class="info">
+                    <label for="message">Your message:</label>
+                    <textarea id="message" placeholder="Your text..."></textarea>
+
+                    <input id="send" class="disabled" type="submit" value="SEND" disabled="true">
+                </div>
+            </form>
+        </section>
+    </section>
+    <header id="menu-block">
+        <nav id="nav">
+            <h3 id="timer">There are <span id="day"></span> <span id="hour"></span> <span id="minute"></span> <span id="second"></span> left before the first exam!</h3>
+            <h3 id="contact-button">Contact me!</h3>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="gallery-title">
+            <h2>The gallery of favourite masterpieces</h2>
+        </section>
+        <section id="gallery">
+            <img src="static/img1.webp" class="gallery-image" alt="">
+            <img src="static/img2.webp" class="gallery-image" alt="">
+            <img src="static/img3.webp" class="gallery-image" alt="">
+            <img src="static/img4.webp" class="gallery-image" alt="">
+            <img src="static/img5.webp" class="gallery-image" alt="">
+            <img src="static/img6.webp" class="gallery-image" alt="">
+            <img src="static/img7.webp" class="gallery-image" alt="">
+            <img src="static/img8.webp" class="gallery-image" alt="">
+            <img src="static/img9.webp" class="gallery-image" alt="">
+            <img src="static/img10.webp" class="gallery-image" alt="">
+            <img src="static/img11.webp" class="gallery-image" alt="">
+            <img src="static/img12.webp" class="gallery-image" alt="">
+            <img src="static/img13.webp" class="gallery-image" alt="">
+            <img src="static/img14.webp" class="gallery-image" alt="">
+            <img src="static/img15.webp" class="gallery-image" alt="">
+            <img src="static/img16.webp" class="gallery-image" alt="">
+            <img src="static/img17.webp" class="gallery-image" alt="">
+            <img src="static/img18.webp" class="gallery-image" alt="">
+            <img src="static/img19.webp" class="gallery-image" alt="">
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="validation.js"></script>
+    <script src="temporary_popup.js"></script>
+    <script src="background.js"></script>
+</body>
+</html>
