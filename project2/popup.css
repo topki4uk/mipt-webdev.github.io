@@ -1,0 +1,260 @@
+/* Scale popup */
+#popup {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: auto;
+    min-width: 60%;
+    padding: 6px;
+    padding-bottom: 16px;
+    background-color: #47622b;
+    border-radius: 10px;
+    border: solid 4px #d7520a;
+}
+
+.back {
+    display: flex;
+    justify-content: end;
+}
+
+#popup img {
+    max-height: 700px;
+    pointer-events: none;
+    border: solid 4px #fff;
+    border-radius: 10px;
+}
+
+.popup-view {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+.show {
+    opacity: 1;
+    z-index: 2;
+    transition: opacity 0.7s ease;
+}
+
+.show-in {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: all;
+}
+
+.show-out {
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.btn-close:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+@media screen and (max-width: 1000px) {
+    #popup {
+        top: 20%;
+        min-width: 60%;
+    }
+
+    #popup img {
+        width: 400px;
+    }
+}
+
+/* Contact form popup */
+
+#contact-form-popup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    min-width: 60%;
+    padding: 10px;
+    background-color: #47622b;
+    border-radius: 10px;
+    border: solid 4px #d7520a;
+}
+
+#contact-me {
+    margin: auto;
+    background-color: #47622b;
+}
+
+#contact-me h2 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    text-align: center;
+}
+
+#contact-form {
+    background-color: #fff;
+    border-radius: 10px;
+    border: solid 4px #d7520a;
+    max-width: 80%;
+    padding: 10px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#send {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    color: aliceblue;
+}
+
+.enabled {
+    pointer-events: all;
+    background-color: #10475e;
+    opacity: 1;
+}
+
+.disabled {
+    pointer-events: none;
+    background-color: #10475e;
+    opacity: 0.5;
+}
+
+.sended {
+    background-color: forestgreen;
+    pointer-events: none;
+    transition: all 0.6s ease;
+}
+
+#send:hover {
+    box-shadow: 2px 4px 2px #1a79a1;;
+    transition: all 0.3s ease;
+}
+
+#contact-button {
+    font-size: 150%;
+    min-width: 200px;
+    margin-left: 5%;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+#contact-button:hover {
+    padding: 4px;
+    cursor: pointer;
+    scale: 1.05;
+    background-color: #fff;
+    transition: all 0.1s ease;
+}
+
+#contact-me h3 {
+    display: none;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    max-width: 80%;
+    font-family: "Special Gothic Expanded One", sans-serif;
+    color: crimson;
+    background-color: #fff;
+    border-radius: 10px;
+    border: solid 2px crimson;
+}
+
+label {
+    font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+.invalid {
+    border: solid 2px crimson;
+}
+
+.invalid:hover {
+    box-shadow: 2px 4px 3px crimson;
+}
+
+.valid {
+    border: solid 2px forestgreen;
+}
+
+.valid:hover {
+    box-shadow: 2px 4px 3px forestgreen;
+}
+
+textarea {
+    min-width: 350px;
+    min-height: 150px;
+    border-radius: 4px;
+}
+
+input {
+    min-width: 350px;
+    border-radius: 4px;
+}
+
+input:hover {
+    box-shadow: 2px 4px 3px #d7520a;
+    transition: all 0.3s ease;
+}
+
+textarea:hover {
+    box-shadow: 2px 4px 3px #d7520a;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1000px) {
+    #contact-form-popup {
+        min-width: 650px;
+    }
+
+    label {
+        font-size: 150%;
+    }
+
+    input {
+        min-width: 300px;
+        font-size: 200%;
+    }
+
+    textarea {
+        min-width: 300px;
+        min-height: 150px;
+        
+    }
+
+    #contact-me h3 {
+        font-size: 150%;
+    }
+}
+
+/* Temporary popup */
+
+#temp-popup {
+    z-index: 10;
+    position: fixed;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin: auto;
+    min-width: 60%;
+    padding: 6px;
+    padding-bottom: 16px;
+    background-color: #47622b;
+    border-radius: 10px;
+    border: solid 4px #d7520a;
+}
+
+#temp-popup h1 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    min-width: 600px;
+    text-align: center;
+}
