@@ -19,7 +19,7 @@
 }
 
 #popup img {
-    max-height: 700px;
+    max-height: 600px;
     pointer-events: none;
     border: solid 4px #fff;
     border-radius: 10px;
@@ -191,13 +191,13 @@ label {
 }
 
 textarea {
-    min-width: 350px;
+    min-width: 250px;
     min-height: 150px;
     border-radius: 4px;
 }
 
 input {
-    min-width: 350px;
+    min-width: 250px;
     border-radius: 4px;
 }
 
