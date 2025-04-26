@@ -156,11 +156,16 @@ function sendMessageForm(event) {
     }, 250);
 
     const jsonData = {};
+    const formData = new FormData(event.currentTarget);
 
-    jsonData['name'] = nameInput.value;
-    jsonData['surname'] = surnameInput.value;
-    jsonData['email'] = emailInput.value;
-    jsonData['message'] = messageInput.value;
+    for (let inp of formData.entries()) {
+        jsonData[inp[0]] = inp[1];
+    }
+
+    // jsonData['name'] = nameInput.value;
+    // jsonData['surname'] = surnameInput.value;
+    // jsonData['email'] = emailInput.value;
+    // jsonData['message'] = messageInput.value;
 
     const jsonString = JSON.stringify(jsonData);
     console.log(jsonString);
@@ -173,10 +178,10 @@ function sendMessageForm(event) {
     }, 1000);
 }
 
-nameInput.addEventListener('keyup', validNameInput);
-surnameInput.addEventListener('keyup', validSurnameInput);
-emailInput.addEventListener('keyup', validEmailInput);
-messageInput.addEventListener('keyup', validMessageInput);
+nameInput.addEventListener('input', validNameInput);
+surnameInput.addEventListener('input', validSurnameInput);
+emailInput.addEventListener('input', validEmailInput);
+messageInput.addEventListener('input', validMessageInput);
 
 contactMeButton.addEventListener('click', openContactFormPopup);
 closeButton.addEventListener('click', closeContactFormPopup);
