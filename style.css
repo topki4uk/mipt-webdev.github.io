@@ -12,7 +12,7 @@ header {
 
 .fix {
     z-index: 10;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
 }

@@ -38,33 +38,35 @@
         </section>
     </section>
     <section id="contact-form-popup" class="show show-out">
-        <div class="back">
-            <button type="button" id="close-form-button" class="btn-close" aria-label="Close"></button>
-        </div>
-        <section id="contact-me">
-            <h2>How to contact me?</h2>
-            <h3 id="nameErrorMessage" class="show show-out">Error</h3>
-            <h3 id="surnameErrorMessage" class="show show-out">Error</h3>
-            <h3 id="emailErrorMessage" class="show show-out">Error</h3>
-            <h3 id="usermessageErrorMessage" class="show show-out">Error</h3>
-            <form id="contact-form" method="post" action="/index.html">
-                <div class="info">
-                    <label for="name">Name:</label>
-                    <input id="name" type="text" name="name" placeholder="Ivan">
-
-                    <label for="surname">Surname:</label>
-                    <input id="surname" type="text" name="surname" placeholder="Ivanov">
-
-                    <label for="email">E-mail:</label>
-                    <input id="email" type="email" name="email" placeholder="example@mail.com">
-                </div>
-                <div class="info">
-                    <label for="message">Your message:</label>
-                    <textarea id="message" name="message" placeholder="Your text..."></textarea>
-
-                    <input id="send" class="disabled" type="submit" value="SEND" disabled="true">
-                </div>
-            </form>
+        <section id="form-section">
+            <div class="back">
+                <button type="button" id="close-form-button" class="btn-close" aria-label="Close"></button>
+            </div>
+            <section id="contact-me">
+                <h2>How to contact me?</h2>
+                <h3 id="nameErrorMessage" class="show show-out">Error</h3>
+                <h3 id="surnameErrorMessage" class="show show-out">Error</h3>
+                <h3 id="emailErrorMessage" class="show show-out">Error</h3>
+                <h3 id="usermessageErrorMessage" class="show show-out">Error</h3>
+                <form id="contact-form" method="post" action="/index.html">
+                    <div class="info">
+                        <label for="name">Name:</label>
+                        <input id="name" type="text" name="name" placeholder="Ivan">
+    
+                        <label for="surname">Surname:</label>
+                        <input id="surname" type="text" name="surname" placeholder="Ivanov">
+    
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="email" name="email" placeholder="example@mail.com">
+                    </div>
+                    <div class="info">
+                        <label for="message">Your message:</label>
+                        <textarea id="message" name="message" placeholder="Your text..."></textarea>
+    
+                        <input id="send" class="disabled" type="submit" value="SEND" disabled="true">
+                    </div>
+                </form>
+            </section>
         </section>
     </section>
     <header id="menu-block">

@@ -4,6 +4,9 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const contactMeButton = document.getElementById('contact-button');
 const closeButton = document.getElementById('close-form-button');
 
+const contactForm = document.getElementById('contact-form-popup');
+const formBlock = document.getElementById('form-section');
+
 const nameInput = document.getElementById('name');
 const surnameInput = document.getElementById('surname');
 const emailInput = document.getElementById('email');
@@ -28,8 +31,7 @@ function openContactFormPopup(event) {
     contactForm.classList.add('show-in');
 }
 
-function closeContactFormPopup(event) {
-    const contactForm = document.getElementById('contact-form-popup');
+function closeContactFormPopupByCross(event) {
     const main = document.getElementById('main');
     const header = document.getElementById('menu-block');
 
@@ -37,6 +39,32 @@ function closeContactFormPopup(event) {
     header.classList.remove('blurred');
     contactForm.classList.remove('show-in');
     contactForm.classList.add('show-out');
+}
+
+function closeContactFormPopupByClick(event) {
+    if (event.target.id != 'contact-form-popup') {
+        return;
+    }
+
+    const main = document.getElementById('main');
+    const header = document.getElementById('menu-block');
+
+    main.className = '';
+    header.classList.remove('blurred');
+    contactForm.classList.remove('show-in');
+    contactForm.classList.add('show-out');
+}
+
+function closeContactFormPopupByKeyboard(event) {
+    if (event.key == 'Escape') {
+        const main = document.getElementById('main');
+        const header = document.getElementById('menu-block');
+
+        main.className = '';
+        header.classList.remove('blurred');
+        contactForm.classList.remove('show-in');
+        contactForm.classList.add('show-out');
+    }
 }
 
 function validNameInput(event) {
@@ -184,6 +212,8 @@ emailInput.addEventListener('input', validEmailInput);
 messageInput.addEventListener('input', validMessageInput);
 
 contactMeButton.addEventListener('click', openContactFormPopup);
-closeButton.addEventListener('click', closeContactFormPopup);
+contactForm.addEventListener('click', closeContactFormPopupByClick);
+contactForm.addEventListener('kedown', closeContactFormPopupByKeyboard);
+closeButton.addEventListener('click', closeContactFormPopupByCross);
 
 sendForm.addEventListener('submit', sendMessageForm);
