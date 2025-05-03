@@ -1,7 +1,8 @@
-const images = Array.from(document.querySelectorAll('.gallery-image'));
 const backButton = document.getElementById('back-button');
 const firstExam = new Date('May 27, 2025, 10:00:00').getTime();
+const gallery = document.getElementById('gallery');
 
+const currInd = 0;
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
 
@@ -25,9 +26,9 @@ function countRestTime() {
 }
 
 function validateIndexes(index) {
-    if (index == 0) {
+    if (index == 1) {
         prev.style = 'display: none';
-    } else if (index == images.length - 1) {
+    } else if (index == gallery.querySelectorAll('img').length) {
         next.style = 'display: none';
     } else {
         prev.style = '';
@@ -35,16 +36,7 @@ function validateIndexes(index) {
     }
 }
 
-function findImageIndex(image) {
-    for (let i = 0; i < images.length; ++i) {
-        if (images[i].getAttribute('src') == image.getAttribute('src')) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-function showOnPopup(event) {
+function showOnPopup(imgSrc, index) {
     const popup = document.getElementById('popup');
     const image = document.getElementById('popup-image');
     const main = document.getElementById('main');
@@ -54,10 +46,10 @@ function showOnPopup(event) {
     header.className = 'blurred';
     popup.classList.remove('show-out');
     popup.classList.add('show-in');
-    image.src = event.target.getAttribute('src');
-    
-    const ind = findImageIndex(image);
-    validateIndexes(ind);
+    image.src = imgSrc;
+
+    validateIndexes(index);
+    window.currInd = index;
 }
 
 function closePopup(event) {
@@ -72,17 +64,19 @@ function closePopup(event) {
 }
 
 function nextImage(event) {
+    window.currInd++;
     const image = document.getElementById('popup-image');
-    const ind = findImageIndex(image) + 1;
-    image.src = images[ind].getAttribute('src');
+    const ind = window.currInd;
+    image.src = `static/img${ind}.webp`;
     validateIndexes(ind);
     
 }
 
 function prevImage(event) {
+    window.currInd--;
     const image = document.getElementById('popup-image');
-    const ind = findImageIndex(image) - 1;
-    image.src = images[ind].getAttribute('src');
+    const ind = window.currInd;
+    image.src = `static/img${ind}.webp`;
     validateIndexes(ind);
 }
 
@@ -97,6 +91,14 @@ function fixHeader() {
     }
 }
 
+function showPopup(event) {
+    console.log(event.target.tagName);
+    if (event.target.tagName == 'IMG') {
+        const ind = Number(event.target.id.slice(3));
+        showOnPopup(event.target.getAttribute('src'), ind);
+    }
+}
+
 window.addEventListener('scroll', fixHeader);
 
 let x = setInterval(countRestTime, 1000);
@@ -104,5 +106,5 @@ let x = setInterval(countRestTime, 1000);
 next.addEventListener('click', nextImage);
 prev.addEventListener('click', prevImage);
 
+gallery.addEventListener('click', showPopup);
 backButton.addEventListener('click', closePopup);
-images.forEach(image => image.addEventListener('click', showOnPopup));
